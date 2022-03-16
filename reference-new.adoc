@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar
-permalink: reference-new-96.html
+permalink: reference-new.html
 keywords: what's new, new, features, release notes, enhancements
 summary: Cloud Volumes ONTAP 9.6 includes several new features and enhancements.
 ---
@@ -47,13 +47,13 @@ A few new EC2 instance types are now supported with Cloud Volumes ONTAP 9.6 when
 
 https://aws.amazon.com/ec2/instance-types/[Learn more about these EC2 instance types^].
 
-link:reference-configs-aws-96.html[Learn more about supported 9.6 configurations in AWS].
+link:reference-configs-aws.html[Learn more about supported 9.6 configurations in AWS].
 
 === Supported data disks
 
 One less data disk is now supported for c5, m5, and r5 instances. For single node systems, 22 data disks are supported. For HA pairs, 19 data disks are supported per node.
 
-link:reference-limits-aws-96.html[Learn more about storage limits in AWS].
+link:reference-limits-aws.html[Learn more about storage limits in AWS].
 
 == Support for DS15_v2 in Azure (12 Feb 2020)
 
@@ -61,7 +61,7 @@ Cloud Volumes ONTAP is now supported with the DS15_v2 virtual machine type in Az
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15[Learn more about the DSv2 series^].
 
-link:reference-configs-azure-96.html[Learn more about supported 9.6 configurations in Azure].
+link:reference-configs-azure.html[Learn more about supported 9.6 configurations in Azure].
 
 == 9.6 P5 (26 Dec 2019)
 
@@ -82,18 +82,18 @@ In addition to bug fixes, this release also enables the following:
 +
 The maximum aggregate size for a single node system was previously 200 TB.
 
-== Pay-as-you-go subscriptions in the GCP Marketplace (6 Oct 2019)
+== Pay-as-you-go subscriptions in the Google Cloud Marketplace (6 Oct 2019)
 
 You can now pay for Cloud Volumes ONTAP as you go by subscribing to Cloud Volumes ONTAP in the Google Cloud Platform Marketplace.
 
 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?q=NetApp&id=8108721b-10e5-48be-88ed-387031dae492[Google Cloud Platform Marketplace: Cloud Manager for Cloud Volumes ONTAP^]
 
-== General Availability of Cloud Volumes ONTAP in GCP (3 Sept 2019)
+== General Availability of Cloud Volumes ONTAP in Google Cloud (3 Sept 2019)
 
-Cloud Volumes ONTAP is now generally available in Google Cloud Platform (GCP) when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
+Cloud Volumes ONTAP is now generally available in Google Cloud Platform (Google Cloud) when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
 
-* https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html[Learn how to get started in GCP^]
-* link:reference-configs-gcp-96.html[View supported configurations]
+* https://docs.netapp.com/us-en/occm/task_getting_started_gcp.html[Learn how to get started in Google Cloud^]
+* link:reference-configs-gcp.html[View supported configurations]
 
 == 9.6 P2 (29 Aug 2019)
 
@@ -118,7 +118,7 @@ Cloud Volumes ONTAP 9.6 RC1 is available in AWS, Azure, and now in Google Cloud 
 
 A private preview of Cloud Volumes ONTAP in Google Cloud Platform is now available. Similar to other cloud providers, Cloud Volumes ONTAP for Google Cloud Platform helps you reduce costs, improve performance, and increase availability.
 
-Cloud Volumes ONTAP is available in GCP as a single node system and supports data tiering to object storage.
+Cloud Volumes ONTAP is available in Google Cloud as a single node system and supports data tiering to object storage.
 
 To join the private preview, send a request to ng-Cloud-Volume-ONTAP-preview@netapp.com.
 

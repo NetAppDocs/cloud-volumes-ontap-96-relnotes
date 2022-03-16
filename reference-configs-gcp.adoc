@@ -1,11 +1,11 @@
 ---
 sidebar: sidebar
-permalink: reference-configs-gcp-96.html
+permalink: reference-configs-gcp.html
 keywords: google, gcp, google cloud platform, explore, standard, premium, byol, paygo, disks, supported, capacity, machine types, sizes
 summary: Cloud Volumes ONTAP is available in Google Cloud Platform as a single node system. Two pricing options are available, pay as you go and Bring Your Own License (BYOL).
 ---
 
-= Supported configurations for Cloud Volumes ONTAP 9.6 in GCP
+= Supported configurations in Google Cloud
 :hardbreaks:
 :nofooter:
 :icons: font
@@ -18,8 +18,8 @@ Cloud Volumes ONTAP is available in Google Cloud Platform as a single node syste
 == Pay-as-you-go overview
 
 * Offers Cloud Volumes ONTAP in three different licensing options: Explore, Standard, and Premium.
-* A 30-day free trial is available for the first Cloud Volumes ONTAP system that you deploy in GCP.
-** There are no hourly software charges, but GCP infrastructure charges still apply (compute, storage, and networking).
+* A 30-day free trial is available for the first Cloud Volumes ONTAP system that you deploy in Google Cloud.
+** There are no hourly software charges, but Google Cloud infrastructure charges still apply (compute, storage, and networking).
 ** When the free trial ends, you'll be charged hourly according to the selected license, https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager[as long as you subscribed^]. If you haven't subscribed, the system shuts down.
 * Conversions from PAYGO to BYOL aren't currently supported.
 * Basic technical support is offered, but you must register and activate the NetApp serial number associated with your system.
@@ -69,13 +69,13 @@ Notes:
 
 . Disk limits prevent you from reaching the 368 TB capacity limit by using disks alone. You can reach the 368 TB capacity limit by https://docs.netapp.com/us-en/occm/concept_data_tiering.html[tiering inactive data to object storage^].
 +
-link:reference-limits-gcp-96.html[Learn more about disk limits in GCP].
+link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 
 . For Google Cloud Platform region support, see https://cloud.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 == Supported disk sizes
 
-In GCP, an aggregate can contain up to 6 disks that are all the same type and size. The following disk sizes are supported:
+In Google Cloud, an aggregate can contain up to 6 disks that are all the same type and size. The following disk sizes are supported:
 
 * 100 GB
 * 500 GB
