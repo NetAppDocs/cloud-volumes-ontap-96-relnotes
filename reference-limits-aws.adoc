@@ -1,0 +1,240 @@
+---
+sidebar: sidebar
+permalink: reference-limits-aws.html
+keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM, ebs
+summary: Cloud Volumes ONTAP has storage configuration limits in AWS to provide reliable operations. For best performance, do not configure your system at the maximum values.
+---
+
+= Storage limits in AWS
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+Cloud Volumes ONTAP has storage configuration limits to provide reliable operations. For best performance, do not configure your system at the maximum values.
+
+== Maximum system capacity by license
+
+The maximum system capacity for a Cloud Volumes ONTAP system is determined by its license. The maximum system capacity includes disk-based storage plus object storage used for data tiering. NetApp doesn't support exceeding this limit.
+
+For some HA configurations, disk limits prevent you from reaching the 368 TiB capacity limit by using disks alone. In those cases, you can reach the 368 TiB capacity limit by https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. Refer to capacity and disk limits below for more details.
+
+[cols="25,75",width=55%,options="header"]
+|===
+| License
+| Maximum system capacity (disks + object storage)
+
+| Explore	| 2 TiB (data tiering is not supported with Explore)
+| Standard | 10 TiB
+| Premium | 368 TiB
+| BYOL | 368 TiB per license
+
+|===
+
+===== For HA, is the license capacity limit per node or for the entire HA pair?
+
+The capacity limit is for the entire HA pair. It is not per node. For example, if you use the Premium license, you can have up to 368 TiB of capacity between both nodes.
+
+===== For an HA system in AWS, does mirrored data count against the capacity limit?
+
+No, it doesn't. Data in an AWS HA pair is synchronously mirrored between the nodes so that the data is available in the event of failure. For example, if you purchase an 8 TiB disk on node A, Cloud Manager also allocates an 8 TiB disk on node B that is used for mirrored data. While 16 TiB of capacity was provisioned, only 8 TiB counts against the license limit.
+
+== Disk and tiering limits by EC2 instance
+
+Cloud Volumes ONTAP uses EBS volumes as disks, with a maximum disk size of 16 TiB. The sections below show disk and tiering limits by EC2 instance type because many EC2 instance types have different disk limits. Disk limits are also different between single node systems and HA pairs.
+
+The disk limits below are specific to disks that contain user data. The limits do not include the boot disk and root disk.
+
+Disk limits are shown by instance for Premium and BYOL licenses only because disk limits can't be reached with Explore or Standard licenses.
+
+=== Single node with a Premium license
+
+[cols="16,20,30,32",width=69%,options="header"]
+|===
+| Instance type
+| Max disks per node
+| Max system capacity with disks alone
+| Max system capacity with disks and data tiering
+
+| c4.4xlarge | 34 | 368 TiB | 368 TiB
+| c4.8xlarge | 34 | 368 TiB | 368 TiB
+| c5.9xlarge | 22 | 352 TiB | 368 TiB
+| c5.18xlarge | 22 | 352 TiB | 368 TiB
+| c5d.4xlarge | 22 | 352 TiB | 368 TiB
+| c5d.9xlarge | 22 | 352 TiB | 368 TiB
+| c5d.18xlarge | 22 | 352 TiB | 368 TiB
+| m4.4xlarge | 34 | 368 TiB | 368 TiB
+| m5.4xlarge | 22 | 352 TiB | 368 TiB
+| m5d.8xlarge | 22 | 352 TiB | 368 TiB
+| r4.2xlarge | 34 | 368 TiB | 368 TiB
+| r5.2xlarge | 22 | 352 TiB | 368 TiB
+| r5d.2xlarge | 22 | 352 TiB | 368 TiB
+|===
+
+=== Single node with one or more BYOL licenses
+
+[cols="10,18,18,18,18,18",width=100%,options="header"]
+|===
+| Instance type
+| Max disks per node
+2+| Max system capacity with one license
+2+| Max system capacity with multiple licenses
+
+2+| | *Disks alone* | *Disks + data tiering* | *Disks alone* | *Disks + data tiering*
+| c4.4xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| c4.8xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| c5.9xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| c5.18xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| c5d.4xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| c5d.9xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| c5d.18xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| m4.xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| m4.2xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| m4.4xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| m5.xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| m5.2xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| m5.4xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| m5d.8xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| r4.xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| r4.2xlarge | 34 | 368 TiB | 368 TiB | 544 TiB | 368 TiB x each license
+| r5.xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| r5.2xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+| r5d.2xlarge | 22 | 352 TiB | 368 TiB | 352 TiB | 368 TiB x each license
+|===
+
+=== HA pairs with a Premium license
+
+[cols="16,20,30,32",width=69%,options="header"]
+|===
+| Instance type
+| Max disks per node
+| Max system capacity with disks alone
+| Max system capacity with disks and data tiering
+
+| c4.4xlarge | 31 | 368 TiB | 368 TiB
+| c4.8xlarge | 31 | 368 TiB | 368 TiB
+| c5.9xlarge | 19 | 304 TiB | 368 TiB
+| c5.18xlarge | 19 | 304 TiB | 368 TiB
+| c5d.4xlarge | 19 | 304 TiB | 368 TiB
+| c5d.9xlarge | 19 | 304 TiB | 368 TiB
+| c5d.18xlarge | 19 | 304 TiB | 368 TiB
+| m4.4xlarge | 31 | 368 TiB | 368 TiB
+| m5.4xlarge | 19 | 304 TiB | 368 TiB
+| m5d.8xlarge | 19 | 304 TiB | 368 TiB
+| r4.2xlarge | 31 | 368 TiB | 368 TiB
+| r5.2xlarge | 19 | 304 TiB | 368 TiB
+| r5d.2xlarge | 19 | 304 TiB | 368 TiB
+|===
+
+=== HA pairs with one or more BYOL licenses
+
+[cols="10,18,18,18,18,18",width=100%,options="header"]
+|===
+| Instance type
+| Max disks per node
+2+| Max system capacity with one license
+2+| Max system capacity with multiple licenses
+
+2+| | *Disks alone* | *Disks + data tiering* | *Disks alone* | *Disks + data tiering*
+
+| c4.4xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| c4.8xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| c5.9xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| c5.18xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| c5d.4xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| c5d.9xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| c5d.18xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| m4.xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| m4.2xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| m4.4xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| m5.xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| m5.2xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| m5.4xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| m5d.8xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| r4.xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| r4.2xlarge | 31 | 368 TiB | 368 TiB | 496 TiB | 368 TiB x each license
+| r5.xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| r5.2xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+| r5d.2xlarge | 19 | 304 TiB | 368 TiB | 304 TiB | 368 TiB x each license
+|===
+
+== Aggregate limits
+
+Cloud Volumes ONTAP uses AWS volumes as disks and groups them into _aggregates_. Aggregates provide storage to volumes.
+
+[cols=2*,options="header,autowidth"]
+|===
+| Parameter
+| Limit
+
+| Maximum number of aggregates |
+Single node: Same as the disk limit
+HA pairs: 18 in a node ^1^
+| Maximum aggregate size | 96 TiB of raw capacity ^2^
+| Disks per aggregate	| 1-6 ^3^
+| Maximum number of RAID groups per aggregate	| 1
+|===
+
+Notes:
+
+. It is not possible to create 18 aggregates on both nodes in an HA pair because doing so would exceed the data disk limit.
+
+. The aggregate capacity limit is based on the disks that comprise the aggregate. The limit does not include object storage used for data tiering.
+
+. All disks in an aggregate must be the same size.
+
+== Logical storage limits
+
+[cols="22,22,56",width=100%,options="header"]
+|===
+| Logical storage
+| Parameter
+| Limit
+
+| *Storage virtual machines (SVMs)*	| Maximum number for Cloud Volumes ONTAP
+(HA pair or single node) | One data-serving SVM and one destination SVM used for disaster recovery. You can activate the destination SVM for data access if there’s an outage on the source SVM. ^1^
+
+The one data-serving SVM spans the entire Cloud Volumes ONTAP system (HA pair or single node).
+.2+| *Files*	| Maximum size | 16 TiB
+| Maximum per volume |	Volume size dependent, up to 2 billion
+| *FlexClone volumes*	| Hierarchical clone depth ^2^ | 499
+.3+| *FlexVol volumes*	| Maximum per node |	500
+| Minimum size |	20 MB
+| Maximum size | 100 TiB
+| *Qtrees* |	Maximum per FlexVol volume |	4,995
+| *Snapshot copies* |	Maximum per FlexVol volume |	1,023
+
+|===
+
+Notes:
+
+. Cloud Manager does not provide any setup or orchestration support for SVM disaster recovery. It also does not support storage-related tasks on an additional SVM. You must use System Manager or the CLI for SVM disaster recovery.
++
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856[SVM Disaster Recovery Preparation Express Guide^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857[SVM Disaster Recovery Express Guide^]
+
+. Hierarchical clone depth is the maximum depth of a nested hierarchy of FlexClone volumes that can be created from a single FlexVol volume.
+
+== iSCSI storage limits
+
+[cols=3*,options="header,autowidth"]
+|===
+| iSCSI storage
+| Parameter
+| Limit
+
+.4+| *LUNs*	| Maximum per node |	1,024
+| Maximum number of LUN maps |	1,024
+| Maximum size	| 16 TiB
+| Maximum per volume	| 512
+| *igroups*	| Maximum per node | 256
+.2+| *Initiators*	| Maximum per node |	512
+| Maximum per igroup	| 128
+| *iSCSI sessions* |	Maximum per node | 1,024
+.2+| *LIFs*	| Maximum per port |	32
+| Maximum per portset	| 32
+| *Portsets* |	Maximum per node |	256
+
+|===
