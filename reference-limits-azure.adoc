@@ -73,11 +73,11 @@ NOTE: For some VM types, you'll need several BYOL licenses to reach the max syst
 2+| | *Disks alone* | *Disks + data tiering* | *Disks alone* | *Disks + data tiering*
 
 | DS3_v2 | 15 | 368 TiB | 368 TiB | 480 TiB | 368 TiB x each license
-| DS4_v2 | 31 | 368 TiB | 368 TiB | 992 TiB | 368 TiB x each license
-| DS5_v2 | 63 | 368 TiB | 368 TiB | 2 PiB | 368 TiB x each license
-| DS13_v2 | 31 | 368 TiB | 368 TiB | 992 TiB | 368 TiB x each license
-| DS14_v2 | 63 | 368 TiB | 368 TiB | 2 PiB | 368 TiB x each license
-| DS15_v2 | 63 | 368 TiB | 368 TiB | 2 PiB | 368 TiB x each license
+| DS4_v2 | 31 | 368 TiB | 368 TiB | 896 TiB | 368 TiB x each license
+| DS5_v2 | 63 | 368 TiB | 368 TiB | 896 TiB | 368 TiB x each license
+| DS13_v2 | 31 | 368 TiB | 368 TiB | 896 TiB | 368 TiB x each license
+| DS14_v2 | 63 | 368 TiB | 368 TiB | 896 TiB | 368 TiB x each license
+| DS15_v2 | 63 | 368 TiB | 368 TiB | 896 TiB | 368 TiB x each license
 |===
 
 === HA pairs with a Premium license
