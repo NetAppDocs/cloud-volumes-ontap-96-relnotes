@@ -15,7 +15,7 @@ summary: Cloud Volumes ONTAP 9.6 includes several new features and enhancements.
 [.lead]
 Cloud Volumes ONTAP 9.6 includes several new features and enhancements.
 
-Additional features and enhancements are also introduced in the latest versions of Cloud Manager. See the https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html[Cloud Manager Release Notes^] for details.
+Additional features and enhancements are also introduced in the latest versions of Cloud Manager. See the https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html[Cloud Manager Release Notes^] for details.
 
 == 9.6 P8 (2 June 2020)
 
@@ -41,7 +41,7 @@ A few new EC2 instance types are now supported with Cloud Volumes ONTAP 9.6 when
 * c5d.18xlarge ^1,2^
 * m5d.8xlarge ^1,2^
 
-^1^ These instance types include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-flash-cache.html[Learn more^].
+^1^ These instance types include local NVMe storage, which Cloud Volumes ONTAP uses as _Flash Cache_. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-flash-cache.html[Learn more^].
 
 ^2^ These instance types are supported with 9.6 P3 and later.
 
@@ -92,7 +92,7 @@ https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-m
 
 Cloud Volumes ONTAP is now generally available in Google Cloud Platform (Google Cloud) when you bring your own license (BYOL). A pay-as-you-go promotion is also available. The promotion offers free licenses for an unlimited number of systems and will expire at the end of September 2019.
 
-* https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html[Learn how to get started in Google Cloud^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-getting-started-gcp.html[Learn how to get started in Google Cloud^]
 * link:reference-configs-gcp.html[View supported configurations]
 
 == 9.6 P2 (29 Aug 2019)
@@ -126,7 +126,7 @@ To join the private preview, send a request to ng-Cloud-Volume-ONTAP-preview@net
 
 Data tiering is now supported with Cloud Volumes ONTAP HA pairs in Microsoft Azure. Data tiering enables automated tiering of inactive data to low-cost Blob storage.
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html[Learn how to set up data tiering in Cloud Manager^].
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-tiering.html[Learn how to set up data tiering in Cloud Manager^].
 
 === Support for FlexCache volumes
 
