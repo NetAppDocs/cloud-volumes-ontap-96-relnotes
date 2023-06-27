@@ -24,7 +24,7 @@ Cloud Volumes ONTAP is available in Google Cloud Platform as a single node syste
 * Conversions from PAYGO to BYOL aren't currently supported.
 * Basic technical support is offered, but you must register and activate the NetApp serial number associated with your system.
 +
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-registering.html[Register pay-as-you-go systems in Cloud Manager^]
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-registering.html[Register pay-as-you-go systems in Cloud Manager^]
 
 == BYOL overview
 
@@ -67,7 +67,7 @@ Notes:
 
 . Enhanced write performance is enabled when using SSDs.
 
-. Disk limits prevent you from reaching the 368 TB capacity limit by using disks alone. You can reach the 368 TB capacity limit by https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^].
+. Disk limits prevent you from reaching the 368 TB capacity limit by using disks alone. You can reach the 368 TB capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^].
 +
 link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 
