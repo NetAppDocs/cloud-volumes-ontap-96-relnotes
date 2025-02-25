@@ -99,7 +99,7 @@ Notes:
 
 . For some HA configurations, disk limits prevent you from reaching the 368 TiB capacity limit by using disks alone. In those cases, you can reach the 368 TiB capacity limit by https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html[tiering inactive data to object storage^]. For information about disk limits, refer to link:reference-limits-aws.html[storage limits].
 
-. For AWS region support, see https://cloud.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+. For AWS region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 == Supported disk sizes
 

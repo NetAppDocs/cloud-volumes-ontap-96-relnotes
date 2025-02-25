@@ -71,7 +71,7 @@ Notes:
 +
 link:reference-limits-gcp.html[Learn more about disk limits in Google Cloud].
 
-. For Google Cloud Platform region support, see https://cloud.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+. For Google Cloud Platform region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 == Supported disk sizes
 

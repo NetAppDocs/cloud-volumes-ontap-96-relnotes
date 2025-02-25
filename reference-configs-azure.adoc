@@ -65,7 +65,7 @@ Notes:
 
 . Enhanced write performance is enabled when using SSDs, but not when using the DS3_v2 virtual machine type.
 
-. For Azure region support, see https://cloud.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+. For Azure region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 === HA pairs
 
@@ -108,7 +108,7 @@ a|
 
 Notes:
 
-. For Azure region support, see https://cloud.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
+. For Azure region support, see https://bluexp.netapp.com/cloud-volumes-global-regions[Cloud Volumes Global Regions^].
 
 == Supported disk sizes
 
